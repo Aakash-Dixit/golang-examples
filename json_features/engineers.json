@@ -1,0 +1,21 @@
+{
+	"engineers": [{
+			"name": "Roman",
+			"type": "Tester",
+			"age": 26,
+			"social": {
+				"github": "https://github.com",
+				"linkedin": "https://linkedin.com"
+			}
+		},
+		{
+			"name": "John",
+			"type": "Developer",
+			"age": 27,
+			"social": {
+				"github": "https://github.com",
+				"linkedin": "https://linkedin.com"
+			}
+		}
+	]
+}

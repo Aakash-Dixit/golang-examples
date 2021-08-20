@@ -1,0 +1,46 @@
+package main
+
+import (
+	"fmt"
+)
+
+func quickSort(arr []int, low, high int) {
+	if low < high {
+		var pivot = partition(arr, low, high)
+		quickSort(arr, low, pivot)
+		quickSort(arr, pivot+1, high)
+	}
+}
+
+func partition(arr []int, low, high int) int {
+	var pivot = arr[low]
+	var i = low
+	var j = high
+
+	for i < j {
+		for arr[i] <= pivot && i < high {
+			i++
+		}
+		for arr[j] > pivot && j > low {
+			j--
+		}
+
+		if i < j {
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+	}
+
+	arr[low] = arr[j]
+	arr[j] = pivot
+
+	return j
+}
+
+func main() {
+	toBeSorted := []int{2, 10, 5, 7, 1, 20, 13, 4}
+	fmt.Println("before sorting : ", toBeSorted)
+	low := 0
+	high := len(toBeSorted) - 1
+	quickSort(toBeSorted, low, high)
+	fmt.Println("after sorting : ", toBeSorted)
+}
